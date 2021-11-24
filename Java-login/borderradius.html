@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .shad-wrap{
+        .wrap{
             filter: drop-shadow(0px 0px 10px rgba(50, 50, 0, 0.89));
         }
         .shad{
@@ -38,11 +38,13 @@
   font: bold 32px system-ui;
   clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 30px 100%, 0 50%);
 }
-
+.wrap:hover{
+    filter: drop-shadow(0px 0px 10px rgba(248, 56, 22, 0.89));
+}
     </style>
 </head>
 <body>
-    <div class="shad-wrap"><div class="shad"></div></div>
+    <div class="wrap"><div class="shad"></div></div>
     <span class="tag-wrap">
         <span class="tag">
           Tag
