@@ -21,11 +21,15 @@ body {
    
 }
 .scoresec{
-    
+    width: 400px;
+    height: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(250, 235, 215, 0.637);
     color:rgb(24, 6, 6);
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     border-radius: 10px;
+    padding: 1em;
 }
 .botao {
     width: 200px;

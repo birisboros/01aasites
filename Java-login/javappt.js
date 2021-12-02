@@ -88,7 +88,7 @@ function playRound(playerSelection) {
                 document.getElementById("mensag").innerHTML = "Ganhou a rodada!";  
             }
             
-            document.getElementById("scorex").innerHTML = score;
-            document.getElementById("cscorex").innerHTML = cscore;
+            document.getElementById("scorex").innerHTML = score + '    --------     ' + playup;
+            document.getElementById("cscorex").innerHTML = cscore + '     --------     ' + compup;
                     
         }
