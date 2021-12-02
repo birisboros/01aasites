@@ -4,6 +4,7 @@ let cscore = 0
 let i= 0
 document.getElementById("scorex").innerHTML = score;
 document.getElementById("cscorex").innerHTML = cscore;
+document.getElementById("mensag").innerHTML = "Melhor de 5 ganha!";
 
 const buttons = document.querySelectorAll('input');
 
@@ -42,7 +43,7 @@ function playRound(playerSelection) {
     
             else if (playup === compup) {
             console.log('Empatou');
-            document.getElementById("mensag").innerHTML = "Empatou!";
+            document.getElementById("mensag").innerHTML = "Empatou a rodada!";
             }
             
             else if (compup === 'TESOURA' && playup === "PAPEL") {
@@ -50,42 +51,42 @@ function playRound(playerSelection) {
                 cscore++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Perdeu..."; 
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada..."; 
             }
             else if (compup === 'TESOURA' && playup === "PEDRA" ) {
                 console.log('Ganhou'); 
                 score++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Ganhou!"; 
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!"; 
             }
             else if (compup === 'PEDRA' && playup === "PAPEL") {
                 console.log('Ganhou');
                 score++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Ganhou!";  
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!";  
             }
             else if (compup === 'PEDRA' && playup === "TESOURA") {
                 console.log('Perdeu');
                 cscore++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Perdeu...";  
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada...";  
             }
             else if (compup === 'PAPEL' && playup === "PEDRA") {
                 console.log('Perdeu');
                 cscore++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Perdeu...";  
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada...";  
             }
             else if (compup === 'PAPEL' && playup === "TESOURA") {
                 console.log('Ganhou');
                 score++;
                 console.log(cscore);
                 console.log(score);
-                document.getElementById("mensag").innerHTML = "Ganhou!";  
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!";  
             }
             
             document.getElementById("scorex").innerHTML = score;

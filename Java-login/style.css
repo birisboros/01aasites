@@ -38,6 +38,8 @@ body {
     border-radius: 10px;
 }
 #mensag{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     width: 100%;
     height: auto;
     color:brown;
