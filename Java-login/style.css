@@ -63,6 +63,7 @@ body {
     background-color: rgba(0, 0, 0, 0.637);
     display: flex;
     justify-content: center;
+    position: fixed;
     bottom: 0;
     }
 .linked{
