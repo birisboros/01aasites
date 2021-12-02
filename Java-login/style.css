@@ -1,0 +1,47 @@
+body {
+    font-family: 'Monoton', cursive;
+    background: rgb(135, 222, 196);
+    background-image: url(paredemadeira.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    z-index: auto;
+}
+.titulo{
+    color:brown;
+    font-size: 3em;
+    background-color: rgba(250, 235, 215, 0.637);
+    border-radius: 10px;
+    
+   
+}
+.scoresec{
+    
+    color:rgb(24, 6, 6);
+    font-size: 3em;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.botao {
+    width: 200px;
+    height: auto;
+    margin: 2vh;
+    color:rgb(24, 6, 6);
+    background-color: rgba(250, 235, 215, 0.637);
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#mensag{
+    width: 300px;
+    height: auto;
+    color:brown;
+    font-size: 3em;
+    background-color: rgba(93, 230, 100, 0.637);
+    border-radius: 10px;
+} 

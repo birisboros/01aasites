@@ -41,7 +41,7 @@ function playRound(playerSelection) {
             }
     
     
-        else if (playup === compup) {
+            else if (playup === compup) {
             console.log('Empatou');}
             
             else if (compup === 'TESOURA' && playup === "PAPEL") {
