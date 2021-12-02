@@ -1,7 +1,6 @@
 
 let score = 0
 let cscore = 0
-let i= 0
 document.getElementById("scorex").innerHTML = score;
 document.getElementById("cscorex").innerHTML = cscore;
 document.getElementById("mensag").innerHTML = "Melhor de 5 ganha!";
@@ -93,7 +92,3 @@ function playRound(playerSelection) {
             document.getElementById("cscorex").innerHTML = cscore;
                     
         }
-            
-        
-    
-        
