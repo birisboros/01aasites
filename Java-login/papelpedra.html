@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra ,Papel ou Tesoura?</title>
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Monoton', cursive;
+    background: rgb(135, 222, 196);
+    background-image: url(paredemadeira.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    z-index: auto;
+}
+.titulo{
+    color:brown;
+    font-size: 3em;
+    background-color: rgba(250, 235, 215, 0.637);
+    border-radius: 10px;
+    
+   
+}
+.scoresec{
+    width: 400px;
+    height: auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(250, 235, 215, 0.637);
+    color:rgb(24, 6, 6);
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1em;
+}
+.botao {
+    width: 200px;
+    height: auto;
+    margin: 2vh;
+    color:rgb(24, 6, 6);
+    background-color: rgba(250, 235, 215, 0.637);
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#mensag{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
+    color:brown;
+    font-size: 3em;
+    background-color: rgba(94, 230, 100, 0.637);
+    border-radius: 10px;
+    text-justify: auto;
+    text-align: center;
+}
+.texfot{
+    font-family: Arial;
+    font-weight: 100;
+    color:white;
+    font-size: 1em;
+    width:100%;
+    height:1.5em;
+    background-color: rgba(0, 0, 0, 0.637);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    }
+.linked{
+    color:white;
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
+     }
+.linked:hover{
+    color:darkorange;
+    } 
+    </style>
+</head>
+<body>
+    <div class="titulo">Pedra ,Papel ou Tesoura?</div>
+<section class="botoes">
+    <input type="button" class="botao" value="PEDRA"></input>
+    <input type="button" class="botao" value="PAPEL"></input>
+    <input type="button" class="botao" value="TESOURA"></input>
+</section>
+<section class="scoresec">
+    <p>Jogador:</p>
+    <p id="scorex"></p>
+    <p>Computador:</p>
+    <p id="cscorex"></p>
+</section>
+<p id="mensag"></p>
+<button class="botao" id="reset">RESET</button>
+<div class="texfot">Copyright © <a class="linked" href="https://github.com/birisboros"> BirisBoros </a> 2021</div>
+    <script>
+        
+let score = 0
+let cscore = 0
+document.getElementById("scorex").innerHTML = score;
+document.getElementById("cscorex").innerHTML = cscore;
+document.getElementById("mensag").innerHTML = "Melhor de 5 ganha!";
+const resetBtn = document.querySelector('#reset');
+const buttons = document.querySelectorAll('input');
+
+resetBtn.addEventListener('click',() => location.reload());
+
+buttons.forEach(button =>{
+    button.addEventListener('click', function(){
+        
+        playRound(button.value)
+    })
+})
+
+function playRound(playerSelection) {
+    
+   
+        let myArray = ['Pedra', 'Papel', 'Tesoura']; 
+        let computerPlay = myArray[(Math.random() * myArray.length) | 0];
+        console.log(computerPlay);
+        
+        let computerSelection = computerPlay;
+        
+        let playup =playerSelection;
+        
+        console.log(playup);
+        let compup =computerSelection.toUpperCase();
+        console.log(compup);
+        
+        if (score === 5) {
+            console.log('acabou ganhou');
+            document.getElementById("mensag").innerHTML = "Acabou..Ganhou!!!!";
+            }   
+            else if (cscore === 5) {
+            console.log('acabou perdeu');
+            document.getElementById("mensag").innerHTML = "Acabou..Perdeu...";
+            }
+    
+    
+            else if (playup === compup) {
+            console.log('Empatou');
+            document.getElementById("mensag").innerHTML = "Empatou a rodada!";
+            }
+            
+            else if (compup === 'TESOURA' && playup === "PAPEL") {
+                console.log('Perdeu');
+                cscore++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada..."; 
+            }
+            else if (compup === 'TESOURA' && playup === "PEDRA" ) {
+                console.log('Ganhou'); 
+                score++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!"; 
+            }
+            else if (compup === 'PEDRA' && playup === "PAPEL") {
+                console.log('Ganhou');
+                score++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!";  
+            }
+            else if (compup === 'PEDRA' && playup === "TESOURA") {
+                console.log('Perdeu');
+                cscore++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada...";  
+            }
+            else if (compup === 'PAPEL' && playup === "PEDRA") {
+                console.log('Perdeu');
+                cscore++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Perdeu a rodada...";  
+            }
+            else if (compup === 'PAPEL' && playup === "TESOURA") {
+                console.log('Ganhou');
+                score++;
+                console.log(cscore);
+                console.log(score);
+                document.getElementById("mensag").innerHTML = "Ganhou a rodada!";  
+            }
+            
+            document.getElementById("scorex").innerHTML = score + '    --------     ' + playup;
+            document.getElementById("cscorex").innerHTML = cscore + '     --------     ' + compup;
+                    
+        }
+    </script>
+</body>
+</html>
