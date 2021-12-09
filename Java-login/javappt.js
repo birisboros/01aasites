@@ -4,8 +4,10 @@ let cscore = 0
 document.getElementById("scorex").innerHTML = score;
 document.getElementById("cscorex").innerHTML = cscore;
 document.getElementById("mensag").innerHTML = "Melhor de 5 ganha!";
-
+const resetBtn = document.querySelector('#reset');
 const buttons = document.querySelectorAll('input');
+
+resetBtn.addEventListener('click',() => location.reload());
 
 buttons.forEach(button =>{
     button.addEventListener('click', function(){
@@ -21,7 +23,6 @@ function playRound(playerSelection) {
         let computerPlay = myArray[(Math.random() * myArray.length) | 0];
         console.log(computerPlay);
         
-      
         let computerSelection = computerPlay;
         
         let playup =playerSelection;
