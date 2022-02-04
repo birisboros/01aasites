@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domanip</title>
+</head>
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+      </h1>
+      <div id="container"></div>
+      <div id="contain2"></div>
+
+      <script>
+
+const container = document.querySelector('#container');
+
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = 'This is the glorious text-content!';
+
+container.appendChild(content);
+
+const contentp = document.createElement('p');
+contentp.classList.add('contentp');
+contentp.textContent = 'Hey I’m red!';
+contentp.style.color="red";
+container.appendChild(contentp);
+
+const contenth3 = document.createElement('h3');
+contenth3.classList.add('contenth3');
+contenth3.textContent = 'I’m a blue h3!';
+contenth3.style.color="blue";
+container.appendChild(contenth3);
+
+contain2.style.backgroundColor="pink";
+contain2.style.border="solid black";
+
+const contenth1 = document.createElement('h1');
+contenth1.classList.add('contenth1');
+contenth1.textContent = 'I’m in a div';
+contenth1.style.color="red";
+contain2.appendChild(contenth1);
+
+const contentp2 = document.createElement('p');
+contentp2.classList.add('contentp2');
+contentp2.textContent = 'ME TOO!';
+contentp2.style.color="red";
+contain2.appendChild(contentp2);
+
+
+      </script>
+</body>
+</html>
