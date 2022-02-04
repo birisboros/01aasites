@@ -12,6 +12,7 @@
       </h1>
       <div id="container"></div>
       <div id="contain2"></div>
+      <button id="btn">Click Me</button>
 
       <script>
 
@@ -50,6 +51,9 @@ contentp2.textContent = 'ME TOO!';
 contentp2.style.color="red";
 contain2.appendChild(contentp2);
 
+btn.addEventListener('click', function (e) {
+  e.target.style.background = 'blue';
+});
 
       </script>
 </body>
