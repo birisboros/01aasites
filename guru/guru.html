@@ -6,15 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GURU</title>
     <style>
-        
+        body{
+            width: 100vh;
+            height: 100vh;
+            display: grid;
+            align-items: center; 
+            background-color: black;
+        }
+        section{
+            width: 100vw;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+            
+        }
+        #pergunta{
+            color: black;
+            font-size: 3em;
+        }
+        #resposta{
+            color: aquamarine;
+            font-size: 3em;
+        }
+       
     </style>
 </head>
 <body>
+    <section>
     <div id="pergunta"></div>
+    </section>
+    <section>
     <div id="resposta"></div>
+    </section>
     <script>
+        let guru=['?',' ','r','e','s','p','o','n','d','a',' ','e','s','s','a',' ','p','e','r','g','u','n','t','a',',',' ','a','g','o','r','a','!'];
+        let i=0;
+        let perg1=[];
+        let resp1=[];
+        
+        let textogeral = document.addEventListener('keydown', function(event){
+    console.log(event.key);
+    
+    let perg2=[event.key];
+    
+    let resp2=[event.key];
+    
+    let perg3 = perg2.toString().toUpperCase();
+    let resp3 = resp2.toString().toLowerCase();
+    
+    if (event.key=='Enter') {
+        document.getElementById("resposta").style.color = "bLack";
+    }
+    if(event.keyCode == 32){
+        var respost2 = resp1.push(' ');
+        var pergunt2 = perg1.push(' ');
+    }
+    if ((resp2=='Shift') &&(perg2=='Shift')) {
+        
+        var index3 = resp2.indexOf("Shift");
+        resp2.splice(index, 1); 
+        var index4 = perg2.indexOf("Shift");
+        perg2.splice(index2, 1); 
+        }
+    if ((resp2=='Enter') &&(perg2=='Enter')) {
+        
+        var index3 = resp2.indexOf("Enter");
+        resp2.splice(index, 1); 
+        var index4 = perg2.indexOf("Enter");
+        perg2.splice(index2, 1); 
+        }
+    if ((resp2=='Backspace') &&(perg2=='Backspace')) {
+        
+       
+        var index4 = perg2.indexOf("Backspace");
+        perg2.splice(index2, 1);
+        perg1.pop(); 
+        }
+    if ((resp2=='CapsLock') &&(perg2=='CapsLock')) {
+        
+    var index = resp2.indexOf("CapsLock");
+    resp2.splice(index, 1); 
+    var index2 = perg2.indexOf("CapsLock");
+    perg2.splice(index2, 1); 
+    }
+
+    if ((resp2 != resp3)&&(event.keyCode != 32)) {
+            
+            var respost = resp1.push(resp2);
+            resp2 = resp1.join('');
+            document.getElementById("resposta").innerHTML = resp2;
+           
+            
+            
+    }
+    if ((resp2 != resp3)&&(event.keyCode != 32)&&(event.key !='Enter')) {
+            guru2=guru.slice(i,1);
+            guru2=guru.splice(0,1);
+            i=i+1;
+            var pergunts3 = perg1.push(guru2);
+            pergunts2=perg1.join('');
+            pergunts2=pergunts2.toUpperCase();
+            document.getElementById("pergunta").innerHTML = pergunts2;
+            console.log(guru2);
+            console.log(i);
+    }if ((resp2 != resp3)&&(event.keyCode == 32)) {
+            perg1.pop();
+            guru2=guru.slice(i,1);
+            guru2=guru.splice(0,1);
+            i=i+1;
+            var pergunts3 = perg1.push(guru2);
+            pergunts2=perg1.join('');
+            pergunts2=pergunts2.toUpperCase();
+            document.getElementById("pergunta").innerHTML = pergunts2;
+            console.log(guru2);
+            console.log(i);
+    }
+    
+    if ((perg2 != perg3)&&(event.keyCode != 32)) {
+        
+        var pergunts = perg1.push(perg2);
+        pergunts2=perg1.join('');
+        pergunts2=pergunts2.toUpperCase();
+        document.getElementById("pergunta").innerHTML = pergunts2;
+        
+        
 
 
+        
+}
+    
+    
+});
+
+       
     </script>
 </body>
 </html>
