@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
     <title>GURU</title>
     <style>
         body{
-            margin: 0%;
             width: 100vh;
             height: 100vh;
             display: grid;
@@ -114,7 +112,7 @@
             console.log(guru2);
             console.log(i);
     }
-    if ((resp2 != resp3)&&(event.keyCode == 32)) {
+    if ((perg2 == perg3)&&(event.keyCode == 32)) {
             perg1.pop();
             guru2=guru.slice(i,1);
             guru2=guru.splice(0,1);
